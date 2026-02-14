@@ -3,8 +3,7 @@ import { GoArrowRight } from "react-icons/go";
 import { useEffect, useRef } from 'react';
 import { toast } from "react-toastify";
 
-const Dashboard = () => {
-
+const HomePage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const toastShown = useRef(false);
@@ -18,24 +17,17 @@ const Dashboard = () => {
   }, [location.state, navigate]);
 
   return (
-    <div className='bg-contain bg-no-repeat bg-center'
-      style={{
-        backgroundImage:
-          'url("home.jpeg")',
-        height: '89vh'
-      }}
-    >
+    <div className='h-screen'>
       <div className='flex justify-center pt-[9cm]'>
         <div
-          className='flex bg-black text-white p-2 border-[3px] border-rose-700  rounded-[9px]'
+          className='flex bg-black text-white p-2 border-[3px] border-green-700  rounded-[9px]'
           onClick={() => navigate('/login')}
         >
           Get Started <GoArrowRight size={25} className='ml-2' />
         </div>
-
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default HomePage;
