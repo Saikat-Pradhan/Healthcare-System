@@ -49,10 +49,10 @@ const Login = () => {
 
   return (
     <div className="flex justify-center bg-neutral-800 pt-[2cm] h-screen">
-      <div className="w-87.5 h-[11.31cm] p-1.5 bg-linear-to-r from-rose-600 via-rose-500 to-black rounded-xl">
+      <div className="w-87.5 h-[11.31cm] p-1.5 bg-linear-to-r from-green-600 via-green-500 to-black rounded-xl">
         <Form onSubmit={handleOnSubmit} className="p-6 bg-neutral-900 rounded-xl text-white">
           <div className='flex justify-center mb-6'>
-            <h2 className='text-2xl text-rose-500 font-bold'>Welcome Back</h2>
+            <h2 className='text-2xl text-green-500 font-bold'>Welcome Back</h2>
           </div>
 
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -63,7 +63,7 @@ const Login = () => {
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <div>
               <Form.Label>Password: </Form.Label>
-              <NavLink to={"/resetpassword"}><span className='text-rose-600 ml-[2cm]'>Forgot password?</span></NavLink>
+              <NavLink to={"/resetpassword"}><span className='text-green-600 ml-[2cm]'>Forgot password?</span></NavLink>
             </div>
             <Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} className='bg-white text-black pl-4 rounded-sm w-full mt-1.25' required />
           </Form.Group>

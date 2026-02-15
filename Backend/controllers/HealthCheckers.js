@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 const BMIChecker = async (req, res, next) => {
   try {
     const { weight, height } = req.body;
@@ -21,28 +23,66 @@ const BMIChecker = async (req, res, next) => {
 
 const HeartChecker = async (req, res, next) => {
   try {
-    const { age, gender } = req.body;
-    if (!age || !gender) {
-      return res.status(400).json({ error: "Age and gender are required" });
+    const { age, trestbps, chol, thalach } = req.body;
+
+    // Validate required fields
+    if ([age, trestbps, chol, thalach].some(v => v === undefined || v === null)) {
+      return res.status(400).json({ error: "All heart parameters are required" });
     }
 
-    const heartRate = gender === "male" ? 72 : 74;
-    return res.status(200).json({ heartRate });
+    // Call ML prediction service
+    const response = await axios.post("http://127.0.0.1:5000/predict/heart", {
+      age,
+      trestbps,
+      chol,
+      thalach
+    });
+
+    // Extract prediction from response
+    const prediction = response.data.prediction;
+
+    if (prediction === 0) {
+      return res.status(200).json({ hasDisease: false });
+    } else if (prediction === 1) {
+      return res.status(200).json({ hasDisease: true });
+    } else {
+      return res.status(500).json({ error: "Unexpected prediction result" });
+    }
   } catch (error) {
+    console.error("Prediction error:", error.message);
     return next(error);
   }
 };
 
 const DiabetesChecker = async (req, res, next) => {
   try {
-    const { age, familyHistory } = req.body;
-    if (!age || !familyHistory) {
-      return res.status(400).json({ error: "Age and family history are required" });
+    const { Glucose, BloodPressure, BMI, Age } = req.body;
+
+    // Validate required fields
+    if ([Glucose, BloodPressure, BMI, Age].some(v => v === undefined || v === null)) {
+      return res.status(400).json({ error: "All diabetes parameters are required" });
     }
 
-    const riskFactor = familyHistory === "yes" ? 0.8 : 0.2;
-    return res.status(200).json({ riskFactor });
+    // Call ML prediction service
+    const response = await axios.post("http://127.0.0.1:5000/predict/diabetes", {
+      Glucose,
+      BloodPressure,
+      BMI,
+      Age,
+    });
+
+    // Extract prediction from response
+    const prediction = response.data.prediction;
+
+    if (prediction === 0) {
+      return res.status(200).json({ hasDiabetes: false });
+    } else if (prediction === 1) {
+      return res.status(200).json({ hasDiabetes: true });
+    } else {
+      return res.status(500).json({ error: "Unexpected prediction result" });
+    }
   } catch (error) {
+    console.error("Prediction error:", error.message);
     return next(error);
   }
 };
