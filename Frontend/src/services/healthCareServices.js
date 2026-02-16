@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Backend_URL = "https://localhost:8000";
+const Backend_URL = "http://localhost:8000";
 
 // User Authentication Services
 export const register = async (name, email, password) => {
@@ -70,32 +70,43 @@ export const bmiCalculator = async (weight, height) => {
       height
     });
     
-    return response.data;
+    return response.data.bmi;
   } catch (error) {
     throw new Error(error.response?.data?.error || "BMI calculation failed");
   }
 };
 
-export const heartDiseasePrediction = async (age, gender) => {
+export const heartDiseasePrediction = async (age, trestbps, chol, thalach) => {
   try {
     const response = await axios.post(`${Backend_URL}/health/heart`, {
       age,
-      gender
+      trestbps,
+      chol,
+      thalach
     });
-    
-    return response.data;
+
+    // Extract prediction and chance from backend response
+    const { hasDisease, chance } = response.data;
+
+    return { hasDisease, chance };
   } catch (error) {
     throw new Error(error.response?.data?.error || "Heart disease prediction failed");
   }
 };
 
-export const diabetesPrediction = async (age, familyHistory) => {
+export const diabetesPrediction = async (Glucose, BloodPressure, BMI, Age) => {
   try {
     const response = await axios.post(`${Backend_URL}/health/diabetes`, {
-      age,
-      familyHistory
+      Glucose,
+      BloodPressure,
+      BMI,
+      Age
     });
-    return response.data;
+
+    // Extract prediction and chance from backend response
+    const { hasDiabetes, chance } = response.data;
+
+    return { hasDiabetes, chance };
   } catch (error) {
     throw new Error(error.response?.data?.error || "Diabetes prediction failed");
   }

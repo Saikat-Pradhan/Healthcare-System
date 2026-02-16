@@ -77,13 +77,13 @@ const ResetPassword = () => {
           </Form.Group>
 
           <div className='flex justify-center'>
-            <Button style={{ backgroundColor: '#e11d48' }} className='mt-[0.7cm] text-white' variant="light" type="submit" disabled={loading}>
+            <Button style={{ backgroundColor: '#228B22' }} className='mt-[0.7cm] text-white' variant="light" type="submit" disabled={loading}>
               {loading ? "Updating..." : "Change Password"}
             </Button>
           </div>
 
           <div className='mt-4'>
-            <h2>Password changed. Go to <NavLink to="/login"><h2 className='text-rose-500 inline-block'>login page</h2></NavLink></h2>
+            <h2>Password changed. Go to <NavLink to="/login"><h2 className='text-green-500 inline-block'>login page</h2></NavLink></h2>
           </div>
         </Form>
       </div>

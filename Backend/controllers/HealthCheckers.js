@@ -38,13 +38,13 @@ const HeartChecker = async (req, res, next) => {
       thalach
     });
 
-    // Extract prediction from response
-    const prediction = response.data.prediction;
+    // Extract prediction and chance from response
+    const { prediction, chance } = response.data;
 
     if (prediction === 0) {
-      return res.status(200).json({ hasDisease: false });
+      return res.status(200).json({ hasDisease: false, chance });
     } else if (prediction === 1) {
-      return res.status(200).json({ hasDisease: true });
+      return res.status(200).json({ hasDisease: true, chance });
     } else {
       return res.status(500).json({ error: "Unexpected prediction result" });
     }
@@ -71,13 +71,13 @@ const DiabetesChecker = async (req, res, next) => {
       Age,
     });
 
-    // Extract prediction from response
-    const prediction = response.data.prediction;
+    // Extract prediction and chance from response
+    const { prediction, chance } = response.data;
 
     if (prediction === 0) {
-      return res.status(200).json({ hasDiabetes: false });
+      return res.status(200).json({ hasDiabetes: false, chance });
     } else if (prediction === 1) {
-      return res.status(200).json({ hasDiabetes: true });
+      return res.status(200).json({ hasDiabetes: true, chance });
     } else {
       return res.status(500).json({ error: "Unexpected prediction result" });
     }

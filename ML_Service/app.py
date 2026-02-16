@@ -8,14 +8,8 @@ app = Flask(__name__)
 # Load Models (runs once)
 # ==============================
 
-heart_model = pickle.load(
-    open("heart_disease_model.pkl", "rb")
-)
-
-diabetes_model = pickle.load(
-    open("diabetes_model.pkl", "rb")
-)
-
+heart_model = pickle.load(open("heart_disease_model.pkl", "rb"))
+diabetes_model = pickle.load(open("diabetes_model.pkl", "rb"))
 
 # ==============================
 # Health Check Route (optional)
@@ -24,7 +18,6 @@ diabetes_model = pickle.load(
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({"message": "ML Service Running"})
-
 
 # ==============================
 # HEART DISEASE PREDICTION
@@ -49,18 +42,20 @@ def predict_heart():
             }), 400
 
         features = np.array([[age, trestbps, chol, thalach]])
-        prediction = heart_model.predict(features)[0]
+
+        # Get probability instead of just class
+        proba = heart_model.predict_proba(features)[0]  # [prob_class0, prob_class1]
+        prediction = int(np.argmax(proba))              # 0 or 1
+        chance = float(proba[1]) * 100                  # percentage chance of heart disease
 
         return jsonify({
             "success": True,
-            "prediction": int(prediction)
+            "prediction": prediction,
+            "chance": round(chance, 2)  # e.g. 72.45%
         })
 
     except Exception as e:
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 400
+        return jsonify({"success": False, "error": str(e)}), 400
 
 # ==============================
 # DIABETES PREDICTION
@@ -85,13 +80,20 @@ def predict_diabetes():
             }), 400
 
         features = np.array([[glucose, bp, bmi, age]])
-        prediction = diabetes_model.predict(features)[0]
 
-        return jsonify({"success": True, "prediction": int(prediction)})
+        # Get probability instead of just class
+        proba = diabetes_model.predict_proba(features)[0]  # [prob_class0, prob_class1]
+        prediction = int(np.argmax(proba))                 # 0 or 1
+        chance = float(proba[1]) * 100                     # percentage chance of diabetes
+
+        return jsonify({
+            "success": True,
+            "prediction": prediction,
+            "chance": round(chance, 2)
+        })
 
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 400
-
 
 # ==============================
 # RUN SERVER

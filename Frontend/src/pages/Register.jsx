@@ -74,7 +74,7 @@ const Register = () => {
 
           <div className='flex justify-center text-white'>
             <Button
-              style={{ backgroundColor: '#e11d48' }}
+              style={{ backgroundColor: '#228B22' }}
               variant="light"
               type="submit"
               disabled={loading}
@@ -84,7 +84,7 @@ const Register = () => {
           </div>
 
           <div className='mt-4'>
-            <h2>Already registered? Go to <NavLink to="/login"><h2 className='text-rose-500 inline-block'>login page</h2></NavLink></h2>
+            <h2>Already registered? Go to <NavLink to="/login"><h2 className='text-green-500 inline-block'>login page</h2></NavLink></h2>
           </div>
         </Form>
       </div>

@@ -8,7 +8,6 @@ import GoogleLogin from '../components/GoogleLogin.jsx';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -70,7 +69,7 @@ const Login = () => {
 
           <div className='flex justify-center text-white'>
             <Button
-              style={{ backgroundColor: '#e11d48' }}
+              style={{ backgroundColor: '#228B22' }}
               variant="light"
               type="submit"
               disabled={loading}

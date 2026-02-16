@@ -1,4 +1,5 @@
 import './App.css';
+import { GoogleOAuthProvider } from '@react-oauth/google';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from './pages/HomePage';
 import BMI_Check from './pages/BMI_Check';
@@ -6,7 +7,7 @@ import Dashboard from './pages/Dashboard';
 import DiabetesCheck from './pages/DiabetesCheck';
 import HeartCheck from './pages/HeartCheck';
 import Login from './pages/Login';
-import  Register from './pages/Register';
+import Register from './pages/Register';
 import ResetPassword from './pages/ResetPassword';
 import MainNavigation from './components/MainNavigation';
 import {ToastContainer} from "react-toastify";
@@ -31,7 +32,7 @@ const router = createBrowserRouter([
 
 export default function App() {
   return (
-    <GoogleOAuthProvider clientId="1041183813993-j39f5tdihd980oul5f0v7l22elppahjh.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="1062404472765-o4nttm7cfqda44l86d447u77e0e81t1p.apps.googleusercontent.com">
       <ToastContainer position='top-center' autoClose={2000} />
       <RouterProvider
         router={router}

@@ -1,41 +1,35 @@
-import { useNavigate, useLocation } from 'react-router-dom';
-import { GoArrowRight } from "react-icons/go";
-import { useEffect, useRef } from 'react';
-import { toast } from "react-toastify";
+import Card from "../components/Card";
 
 const Dashboard = () => {
-
-  const navigate = useNavigate();
-  const location = useLocation();
-  const toastShown = useRef(false);
-
-  useEffect(() => {
-    if (location.state?.message && !toastShown.current) {
-      toastShown.current = true;
-      const { message, type } = location.state;
-      type === "success" ? toast.success(message) : toast.error(message);
-    }
-  }, [location.state, navigate]);
+  const cards = [
+    {
+      image: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/2610561.jpg",
+      title: "BMI Calculator",
+      link: "/bmi"
+    },
+    {
+      image: "https://www.genesismedtech.com/wp-content/uploads/2025/03/resized-photo.jpg",
+      title: "Heart Disease Predictor",
+      link: "/heart"
+    },
+    {
+      image: "https://www.metropolisindia.com/upgrade/blog/upload/25/08/normal-blood-sugar-levels-chart1756392583.webp",
+      title: "Diabetes Risk Assessment",
+      link: "/diabetes"
+    },
+  ];
 
   return (
-    <div className='bg-contain bg-no-repeat bg-center'
-      style={{
-        backgroundImage:
-          'url("home.jpeg")',
-        height: '89vh'
-      }}
-    >
-      <div className='flex justify-center pt-[9cm]'>
-        <div
-          className='flex bg-black text-white p-2 border-[3px] border-rose-700  rounded-[9px]'
-          onClick={() => navigate('/login')}
-        >
-          Get Started <GoArrowRight size={25} className='ml-2' />
+    <section className="text-gray-600 body-font h-screen">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="flex flex-wrap -m-4">
+          {cards.map((card, index) => (
+            <Card key={index} {...card} />
+          ))}
         </div>
-
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Dashboard
+export default Dashboard;
