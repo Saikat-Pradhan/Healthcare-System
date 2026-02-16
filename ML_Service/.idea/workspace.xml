@@ -4,27 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c3603509-8e73-42dc-a6b3-3e02a0381cf8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Backend/controllers/HealthCheckers.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Backend/controllers/HealthCheckers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Footer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/MainNavigation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/MainNavigation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/components/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/components/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/BMI_Check.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/BMI_Check.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/HomePage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/Register.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/ResetPassword.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/ResetPassword.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/dashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/diabetesCheck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/diabetesCheck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/pages/heartCheck.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/pages/heartCheck.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Frontend/src/services/healthCareServices.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/src/services/healthCareServices.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-    </list>
+    <list default="true" id="c3603509-8e73-42dc-a6b3-3e02a0381cf8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
