@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const Backend_URL = "http://localhost:8000";
+const Backend_URL = "https://healthcare-system-bafs.onrender.com";
 
 // User Authentication Services
 export const register = async (name, email, password) => {
