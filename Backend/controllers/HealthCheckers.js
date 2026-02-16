@@ -31,7 +31,7 @@ const HeartChecker = async (req, res, next) => {
     }
 
     // Call ML prediction service
-    const response = await axios.post("http://127.0.0.1:5000/predict/heart", {
+    const response = await axios.post("https://healthcare-system-fft6.onrender.com/predict/heart", {
       age,
       trestbps,
       chol,
@@ -64,7 +64,7 @@ const DiabetesChecker = async (req, res, next) => {
     }
 
     // Call ML prediction service
-    const response = await axios.post("http://127.0.0.1:5000/predict/diabetes", {
+    const response = await axios.post("https://healthcare-system-fft6.onrender.com/predict/diabetes", {
       Glucose,
       BloodPressure,
       BMI,
