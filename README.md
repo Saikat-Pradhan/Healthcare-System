@@ -83,6 +83,7 @@ ML Models (.pkl)
 
 ## 📂 Project Structure
 
+```
 healthcare-app/
 │
 ├── frontend/        # React frontend
@@ -96,7 +97,7 @@ healthcare-app/
 │   ├── app.py
 │   ├── heart_desease_model.pkl
 │   └── diabetes_model.pkl
-
+```
 ---
 
 ## ⚙️ Installation & Setup
