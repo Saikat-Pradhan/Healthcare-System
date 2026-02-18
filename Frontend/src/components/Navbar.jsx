@@ -4,7 +4,6 @@ import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,7 +29,7 @@ const Navbar = () => {
     <nav className='flex justify-between w-screen h-[1.5cm] bg-linear-to-r from-green-900 via-green-700 dark:to-black pr-[0.5cm] pl-[0.5cm]'>
       <ul className='flex gap-3.75'>
         <img src="/icon.jpg" alt="HealthNova Icon" className="w-10 h-10 rounded-full mt-2" />
-        <h2 className='mt-2.25 text-white text-3xl font-serif'>HealthNova</h2>
+        <h2 className='mt-2.25 text-white text-[1.5rem] font-serif'>HealthNova</h2>
       </ul>
       <ul className='flex gap-4 mt-px items-center'>
         {user && user?.name && (

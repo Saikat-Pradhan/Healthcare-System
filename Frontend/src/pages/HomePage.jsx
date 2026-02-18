@@ -38,7 +38,7 @@ const HomePage = () => {
       </div>
 
       {/* Ripple Background */}
-      <div className="relative w-full max-w-4xl h-[400px] mb-12">
+      <div className="w-full max-w-4xl h-[400px] mb-12">
         <RippleGrid
           enableRainbow={false}
           gridColor="#228B22"
@@ -52,12 +52,12 @@ const HomePage = () => {
       </div>
 
       {/* Get Started Button */}
-      <div
-        className="flex items-center bg-black text-white px-6 py-3 border-4 border-green-700 rounded-lg cursor-pointer hover:px-[0.7cm] hover:py-[0.4cm] hover:border-green-800 transition"
-        onClick={() => navigate('/login')}
-      >
-        Get Started <GoArrowRight size={25} className="ml-2" />
-      </div>
+        <div
+          className="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center bg-black text-white px-6 py-3 border-4 border-green-700 rounded-lg cursor-pointer hover:px-[0.7cm] hover:py-[0.4cm] hover:border-green-800 transition"
+          onClick={() => navigate('/login')}
+        >
+          Get Started <GoArrowRight size={25} className="ml-2" />
+        </div>
     </div>
   );
 };
