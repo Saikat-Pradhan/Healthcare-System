@@ -64,13 +64,15 @@ perform multiple health checks and get intelligent predictions through a unified
 
 ## 🏗️ Architecture
 
-(``` React (Frontend) 
+```
+React (Frontend) 
         ↓
 Node.js + Express (Main Backend)
         ↓
 Flask ML Service
         ↓
-ML Models (.pkl) ```)
+ML Models (.pkl)
+```
 
 ## Golden Rule:
 
