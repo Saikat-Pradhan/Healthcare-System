@@ -1,14 +1,22 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { GoArrowRight } from "react-icons/go";
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
 import { toast } from "react-toastify";
 import RippleGrid from '../components/UI/RippleGrid';
 import TextType from '../components/UI/TextType';
+import { UserContext } from '../context/UserContext';
 
 const HomePage = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const toastShown = useRef(false);
+  const { user } = useContext(UserContext);
+
+  useEffect(() => {
+    if (user) {
+      navigate('/dashboard');
+    }
+  }, [user, navigate]);
 
   useEffect(() => {
     if (location.state?.message && !toastShown.current) {
