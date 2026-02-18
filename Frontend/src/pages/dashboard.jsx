@@ -1,6 +1,20 @@
 import Card from "../components/Card";
+import { toast } from "react-toastify";
+import { useEffect, useRef } from 'react';
+import { useLocation } from "react-router-dom";
 
 const Dashboard = () => {
+  const location = useLocation();
+  const toastShown = useRef(false);
+
+  useEffect(() => {
+    if (location.state?.message && !toastShown.current) {
+      toastShown.current = true;
+      const { message, type } = location.state;
+      type === "success" ? toast.success(message) : toast.error(message);
+    }
+  }, [location.state]);
+
   const cards = [
     {
       image: "https://sa1s3optim.patientpop.com/assets/images/provider/photos/2610561.jpg",

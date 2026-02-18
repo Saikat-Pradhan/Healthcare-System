@@ -1,5 +1,7 @@
 const axios = require("axios");
 
+const ML_Backend_URL = "https://healthcare-system-fft6.onrender.com";
+
 const BMIChecker = async (req, res, next) => {
   try {
     const { weight, height } = req.body;
@@ -31,7 +33,7 @@ const HeartChecker = async (req, res, next) => {
     }
 
     // Call ML prediction service
-    const response = await axios.post("https://healthcare-system-fft6.onrender.com/predict/heart", {
+    const response = await axios.post(`${ML_Backend_URL}/predict/heart`, {
       age,
       trestbps,
       chol,
@@ -64,7 +66,7 @@ const DiabetesChecker = async (req, res, next) => {
     }
 
     // Call ML prediction service
-    const response = await axios.post("https://healthcare-system-fft6.onrender.com/predict/diabetes", {
+    const response = await axios.post(`${ML_Backend_URL}/predict/diabetes`, {
       Glucose,
       BloodPressure,
       BMI,

@@ -2,6 +2,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const dotenv = require("dotenv");
 const Users = require("../models/User.js");
+const { oauth2Client } = require('../Utils/googleClient');
+const axios = require("axios");
 
 dotenv.config();
 
@@ -67,11 +69,11 @@ const googleAuth = async (req, res) => {
       `https://www.googleapis.com/oauth2/v1/userinfo?alt=json&access_token=${tokens.access_token}`
     );
 
-    const { email, name, picture } = userRes.data;
+    const { email, name } = userRes.data;
 
     let user = await Users.findOne({ email });
     if (!user) {
-      user = await Users.create({ name, email, picture });
+      user = await Users.create({ name, email});
     }
 
     const token = jwt.sign({ _id: user._id, email }, process.env.JWT_SECRET, {
