@@ -28,7 +28,7 @@ const GoogleLogin = (props) => {
                 };
 
                 localStorage.setItem('user', JSON.stringify(userWithExpiry));
-                navigate("/dashboard", { state: { message: "Login Successful!", type: "success" } });
+                navigate("/", { state: { message: "Login Successful!", type: "success" } });
             } else {
                 console.log(authResult);
                 throw new Error(authResult);
