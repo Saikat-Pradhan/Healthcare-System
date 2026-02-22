@@ -12,6 +12,8 @@ import ResetPassword from './pages/ResetPassword';
 import MainNavigation from './components/MainNavigation';
 import {ToastContainer} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css"
+import { useEffect } from 'react';
+import axios from 'axios';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +33,19 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
+  useEffect(() => {
+    const wakeUpServer = async () => {
+      try {
+        await axios.get("https://healthcare-system-bafs.onrender.com");
+        await axios.get("https://healthcare-system-fft6.onrender.com");
+      } catch (error) {
+        console.log("Wake up Failed:", error) ;
+      }
+    };
+
+    wakeUpServer();
+  }, []);
+
   return (
     <GoogleOAuthProvider clientId="1062404472765-o4nttm7cfqda44l86d447u77e0e81t1p.apps.googleusercontent.com">
       <ToastContainer position='top-center' autoClose={2000} />

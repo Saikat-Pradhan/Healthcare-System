@@ -18,7 +18,6 @@ const HeartCheck = () => {
 
     try {
       const result = await heartDiseasePrediction(age, trestbps, chol, thalach);
-      console.log("Prediction result:", result);
       setPrediction(result);
     } catch (error) {
       console.error("Prediction failed:", error);
