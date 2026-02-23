@@ -104,36 +104,46 @@ healthcare-app/
 
 1️⃣ Clone Repository
 
+```
 git clone https://github.com/Saikat-Pradhan/Healthcare-System.git
 cd healthcare-app
+```
 
 ---
 
 2️⃣ Frontend Setup
 
+```
 cd frontend
 npm install
 npm run dev
+```
 
 ---
 
 3️⃣ Backend Setup
 
+```
 cd backend
 npm install
 npm start
+```
 
 ---
 
 4️⃣ ML Service Setup
 
+```
 cd ml-services
 pip install flask numpy scikit-learn
 python app.py
+```
 
 Flask runs on:
 
+```
 http://localhost:5000
+```
 
 ---
 
