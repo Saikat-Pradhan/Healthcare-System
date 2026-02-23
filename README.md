@@ -104,7 +104,7 @@ healthcare-app/
 
 1️⃣ Clone Repository
 
-git clone <your-repository-link>
+git clone https://github.com/Saikat-Pradhan/Healthcare-System.git
 cd healthcare-app
 
 ---
