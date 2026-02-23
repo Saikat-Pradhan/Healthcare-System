@@ -100,11 +100,15 @@ const DiabetesCheck = () => {
               <div className="flex justify-center mt-6 text-center">
                 {prediction.hasDiabetes ? (
                   <h2 className="text-red-400 font-bold">
-                    You have Diabetes (Confidence: {prediction.chance}%)
+                    You have Diabetes
+                    <br /> 
+                    (Confidence: {prediction.chance}%)
                   </h2>
                 ) : (
                   <h2 className="text-green-400 font-bold">
-                    You are Healthy (Confidence: {prediction.chance}%)
+                    You are Healthy
+                    <br />
+                    (Confidence: {prediction.chance}%)
                   </h2>
                 )}
               </div>

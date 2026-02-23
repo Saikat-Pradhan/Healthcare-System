@@ -106,11 +106,15 @@ const HeartCheck = () => {
               <div className="flex justify-center mt-6 text-center">
                 {prediction.hasDisease ? (
                   <h2 className="text-red-400 font-bold">
-                    You have a Defective Heart (Confidence: {prediction.chance}%)
+                    You have a Defective Heart
+                    <br />
+                    (Confidence: {prediction.chance}%)
                   </h2>
                 ) : (
                   <h2 className="text-green-400 font-bold">
-                    You have a Healthy Heart (Confidence: {prediction.chance}%)
+                    You have a Healthy Heart
+                    <br />
+                    (Confidence: {prediction.chance}%)
                   </h2>
                 )}
               </div>
