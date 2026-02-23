@@ -106,7 +106,7 @@ healthcare-app/
 
 ```
 git clone https://github.com/Saikat-Pradhan/Healthcare-System.git
-cd healthcare-app
+cd Healthcare-System
 ```
 
 ---
