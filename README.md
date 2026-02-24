@@ -1,5 +1,15 @@
 # 🏥 HealthNova — Smart Healthcare Prediction Platform
 
+![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green?logo=node.js)
+![Express](https://img.shields.io/badge/Framework-Express-black?logo=express)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-darkgreen?logo=mongodb)
+![Flask](https://img.shields.io/badge/ML%20API-Flask-lightgrey?logo=flask)
+![Python](https://img.shields.io/badge/Python-ML-yellow?logo=python)
+![Scikit-learn](https://img.shields.io/badge/Scikit--Learn-ML-orange?logo=scikitlearn)
+![Machine Learning](https://img.shields.io/badge/Machine-Learning-red)
+![JWT](https://img.shields.io/badge/Auth-JWT-purple)
+
 HealthNova is a MERN + Machine Learning based healthcare web application where users can 
 perform multiple health checks and get intelligent predictions through a unified dashboard.
 
